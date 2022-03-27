@@ -10,7 +10,12 @@ public class Symptoms implements Serializable  {
     		designation=n;
     		id_Sym=I;
     	}
-    	public String toString()
+
+    public Symptoms() {
+
+    }
+
+	public String toString()
     	{
     		return designation;
     	}

@@ -1,4 +1,4 @@
-package fstm.projet.controller;
+package fstm.projet.model.bo;
 
 import fstm.projet.model.bo.Client;
 import fstm.projet.model.bo.Region;

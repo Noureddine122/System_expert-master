@@ -13,8 +13,8 @@ import java.util.Vector;
 
 public class Diagnostic_CTR {
 	
-	private static String host = "192.168.31.17";
-	private static int port = 7000;
+	private static final String host = "172.17.36.48";
+	private static final int port = 7000;
 	public Diagnostic_CTR()
 	{
 		
@@ -30,8 +30,6 @@ public static void diagoniser(Client c,Vector<Symptoms> sys,Vector<Maladie_chron
 		Socketinter socketinter = new Socketinter(sys,c);
 		Socket socket = new Socket(host, port);
 		System.out.println("Connected.................");
-
-		boolean fini = false;
 
 		OutputStream os = socket.getOutputStream();
 		ObjectOutputStream oos = new ObjectOutputStream(os);
@@ -73,34 +71,29 @@ public static ArrayList<Symptoms> afficheSy() throws IOException, ClassNotFoundE
 	Socket socket = new Socket(host, port);
 	System.out.println("Connected.................");
 
-	boolean fini = false;
-	AskSymptoms n = new AskSymptoms();
+	Symptoms n = new Symptoms();
 	OutputStream os = socket.getOutputStream();
 	ObjectOutputStream oos = new ObjectOutputStream(os);
 	oos.writeObject(n);
 
 	InputStream is = socket.getInputStream();
 	ObjectInputStream ois = new ObjectInputStream(is);
-	ArrayList<Symptoms> obj1=(ArrayList<Symptoms>)ois.readObject();
-	return obj1;
+	return (ArrayList<Symptoms>)ois.readObject();
 	/*//DAOSymptom daoSymptom=new DAOSymptom();
 	return daoSymptom.retreive();*/
 }
 public static ArrayList<Region> afficheRe() throws IOException, ClassNotFoundException {
-		AskRegions askRegions = new AskRegions();
+	Region obj2 = new Region();
 	Socket socket = new Socket(host, port);
 	System.out.println("Connected.................");
 
-	boolean fini = false;
-	AskSymptoms n = new AskSymptoms();
 	OutputStream os = socket.getOutputStream();
 	ObjectOutputStream oos = new ObjectOutputStream(os);
-	oos.writeObject(askRegions);
+	oos.writeObject(obj2);
 
 	InputStream is = socket.getInputStream();
 	ObjectInputStream ois = new ObjectInputStream(is);
-	ArrayList<Region> obj1=(ArrayList<Region>)ois.readObject();
-	return obj1;
+	return (ArrayList<Region>)ois.readObject();
 	/*DAORegion deDaoRegion=new DAORegion();
 	return deDaoRegion.retreiveR();*/
 }
@@ -123,8 +116,6 @@ public static void updateClient(Client c,double temp,Region reg) throws IOExcept
 	Socket socket = new Socket(host, port);
 	System.out.println("Connected.................");
 
-	boolean fini = false;
-
 	OutputStream os = socket.getOutputStream();
 	ObjectOutputStream oos = new ObjectOutputStream(os);
 	oos.writeObject(socketUpdate);
@@ -136,8 +127,6 @@ public static Client authClient (String email,String passString) throws IOExcept
 	Socket socket = new Socket(host, port);
 	System.out.println("Connected.................");
 
-	boolean fini = false;
-
 	OutputStream os = socket.getOutputStream();
 	ObjectOutputStream oos = new ObjectOutputStream(os);
 	SocketInscription n = new SocketInscription(email,passString);
@@ -145,8 +134,7 @@ public static Client authClient (String email,String passString) throws IOExcept
 
 	InputStream is = socket.getInputStream();
 	ObjectInputStream ois = new ObjectInputStream(is);
-	Client obj1=(Client)ois.readObject();
-	return obj1;
+	return (Client)ois.readObject();
 		/*DAOClient daoClient=new DAOClient();
 return daoClient.Authentification(email, passString);*/
 	

@@ -5,7 +5,6 @@ import fstm.projet.model.dao.DAOClient;
 import fstm.projet.model.dao.DAORegion;
 import fstm.projet.model.dao.DAOSymptom;
 
-import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
 
@@ -37,9 +36,9 @@ public class SocketController implements Runnable {
                 diagoniser(socke);
             }else if(objInput instanceof SocketUpdate socke){
                 ClientUpdate(socke);
-            }else if(objInput instanceof AskSymptoms){
+            }else if(objInput instanceof Symptoms){
                sendSymptoms();
-            }else if(objInput instanceof AskRegions){
+            }else if(objInput instanceof Region){
                 sendRegions();
             }
 

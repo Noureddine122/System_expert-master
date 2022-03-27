@@ -1,4 +1,4 @@
-package fstm.projet.controller;
+package fstm.projet.model.bo;
 
 import java.io.Serializable;
 

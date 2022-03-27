@@ -63,8 +63,12 @@
     <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.12.10" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:bson:3.12.10" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.12.10" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:${slf4j.version}" level="project" />
-    <orderEntry type="library" name="Maven: org.kie:kie-api:6.4.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.drools:drools:7.67.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.0-alpha7" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-reload4j:2.0.0-alpha7" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.reload4j:reload4j:1.2.19" level="project" />
+    <orderEntry type="library" name="Maven: org.kie:kie-api:7.67.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.kie.soup:kie-soup-maven-support:7.67.0.Final" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.9.0" level="project" />
   </component>
 </module>
